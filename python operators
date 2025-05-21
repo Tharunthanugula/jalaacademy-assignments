@@ -1,0 +1,29 @@
+# 1. Arithmetic operators
+def arithmetic(a, b):
+    print(a + b, a - b, a * b, a / b)
+
+arithmetic(10, 2)
+
+# 2. Increment and decrement (Python doesn't have ++/--)
+a = 5
+a += 1
+print("Increment:", a)
+a -= 1
+print("Decrement:", a)
+
+# 3. Equal check
+def check_equal(a, b):
+    print("Equal" if a == b else "Not Equal")
+
+check_equal(5, 5)
+
+# 4. Relational operators
+a, b = 10, 20
+print(a < b, a <= b, a > b, a >= b)
+
+# 5. Smaller and larger number
+def compare(x, y):
+    print("Smaller:", min(x, y))
+    print("Larger:", max(x, y))
+
+compare(15, 25)
