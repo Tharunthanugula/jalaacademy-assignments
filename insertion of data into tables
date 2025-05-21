@@ -1,0 +1,13 @@
+-- Employee Data
+INSERT INTO Employee VALUES
+(1, 'Alice', 'HR', 50000, '2021-01-10'),
+(2, 'Bob', 'IT', 70000, '2020-05-15'),
+(3, 'Charlie', 'Finance', 60000, '2019-11-23'),
+(4, 'David', 'IT', 75000, '2022-03-10'),
+(5, 'Eve', 'HR', 52000, '2021-06-01');
+
+-- Department Data
+INSERT INTO Department VALUES
+(1, 'HR', 'Hyderabad'),
+(2, 'IT', 'Bangalore'),
+(3, 'Finance', 'Chennai');
