@@ -1,0 +1,32 @@
+Q1. Select all employees
+SELECT * FROM Employee;
+Q2. Find employees with salary > 60000
+SELECT * FROM Employee WHERE Salary > 60000;
+Q3. Get names of employees who joined after 2021
+SELECT EmpName FROM Employee WHERE DOJ > '2021-01-01';
+Q4. Count number of employees in each department
+tSELECT Department, COUNT(*) AS EmpCount
+FROM Employee
+GROUP BY Department;
+Q5. Get the highest salary employee
+SELECT * FROM Employee
+WHERE Salary = (SELECT MAX(Salary) FROM Employee);
+Q6. Get average salary by department
+SELECT Department, AVG(Salary) AS AvgSalary
+FROM Employee
+GROUP BY Department;
+Q7. Join Employee with Department table
+SELECT e.EmpID, e.EmpName, d.DeptName, d.Location
+FROM Employee e
+JOIN Department d ON e.Department = d.DeptName;
+Q8. Find duplicate departments
+SELECT Department, COUNT(*) 
+FROM Employee
+GROUP BY Department
+HAVING COUNT(*) > 1;
+Q9. Fetch second highest salary
+SELECT MAX(Salary) AS SecondHighest
+FROM Employee
+WHERE Salary < (SELECT MAX(Salary) FROM Employee);
+Q10. Employees not in IT Department
+SELECT * FROM Employee WHERE Department != 'IT';
