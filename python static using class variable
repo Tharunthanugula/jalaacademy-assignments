@@ -1,0 +1,21 @@
+class Test:
+    static_var = 10  # static variable
+
+    def __init__(self):
+        self.instance_var = 20
+
+# Access through class
+print(Test.static_var)
+
+# Access through instance
+t = Test()
+print(t.static_var)
+
+# Change in instance (creates new instance var)
+t.static_var = 50
+print("Instance changed:", t.static_var)
+print("Class remains:", Test.static_var)
+
+# Change through class
+Test.static_var = 99
+print("Changed in class:", Test.static_var)
