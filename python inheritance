@@ -1,0 +1,29 @@
+class A:
+    def method1(self): print("A - method1")
+    def method2(self): print("A - method2")
+    def common(self): print("A - common")
+
+class B(A):
+    def method3(self): print("B - method3")
+    def method4(self): print("B - method4")
+    def common(self): print("B - common")
+
+class C(B):
+    def method5(self): print("C - method5")
+    def method6(self): print("C - method6")
+    def common(self): print("C - common")
+
+a = A()
+b = B()
+c = C()
+
+a.method1(); a.method2(); a.common()
+b.method3(); b.method4(); b.common()
+c.method5(); c.method6(); c.common()
+
+# Super class reference
+ref = A()
+ref = B()
+ref.common()
+ref = C()
+ref.common()
