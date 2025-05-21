@@ -1,0 +1,17 @@
+from abc import ABC, abstractmethod
+
+class AbstractDemo(ABC):
+    @abstractmethod
+    def abs_method(self):
+        pass
+
+    def concrete_method(self):
+        print("Non-abstract method")
+
+class Child(AbstractDemo):
+    def abs_method(self):
+        print("Implemented abstract method")
+
+c = Child()
+c.abs_method()
+c.concrete_method()
