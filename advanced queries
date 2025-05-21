@@ -1,0 +1,39 @@
+11. Rank employees by salary (highest first)
+SELECT EmpName, Salary,
+RANK() OVER (ORDER BY Salary DESC) AS SalaryRank
+FROM Employee;
+12. Get department-wise max salary
+SELECT Department, MAX(Salary) AS MaxSalary
+FROM Employee
+GROUP BY Department;
+13. Get employees with salary greater than department average
+SELECT * FROM Employee e
+WHERE Salary > (
+SELECT AVG(Salary) FROM Employee
+WHERE Department = e.Department);
+14. Find employee(s) with the minimum salary
+SELECT * FROM Employee
+WHERE Salary = (SELECT MIN(Salary) FROM Employee);
+15. Count employees who joined in each year
+SELECT YEAR(DOJ) AS JoinYear, COUNT(*) AS NumEmployees
+FROM Employee
+GROUP BY YEAR(DOJ);
+16. Update salary of HR department employees by 10%
+UPDATE Employee
+SET Salary = Salary * 1.10
+WHERE Department = 'HR';
+17. Delete employees with salary less than 50000
+DELETE FROM Employee
+WHERE Salary < 50000;
+18. Add a new column for email
+ALTER TABLE Employee
+ADD Email VARCHAR(100);
+19. Set email for all employees (example domain)
+UPDATE Employee
+SET Email = CONCAT(LOWER(EmpName), '@company.com');
+20. Find the department with most employees
+SELECT Department
+FROM Employee
+GROUP BY Department
+ORDER BY COUNT(*) DESC
+LIMIT 1;
