@@ -1,0 +1,42 @@
+# PRIVATE
+class PrivateDemo:
+    def __init__(self):
+        self.__val = 10
+
+    def __private_method(self):
+        print("Private method")
+
+    def access(self):
+        print(self.__val)
+        self.__private_method()
+
+demo = PrivateDemo()
+demo.access()
+
+# PROTECTED
+class ProtectedDemo:
+    def __init__(self):
+        self._val = 20
+
+    def _method(self):
+        print("Protected method")
+
+class ChildProtected(ProtectedDemo):
+    def show(self):
+        print(self._val)
+        self._method()
+
+cp = ChildProtected()
+cp.show()
+
+# PUBLIC
+class PublicDemo:
+    def __init__(self):
+        self.val = 30
+
+    def method(self):
+        print("Public method")
+
+p = PublicDemo()
+print(p.val)
+p.method()
