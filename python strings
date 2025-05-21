@@ -1,0 +1,42 @@
+# 1. Creating strings
+s1 = "hello"
+s2 = str("world")
+
+# 2. Concatenation
+print(s1 + " " + s2)
+
+# 3. Length
+print(len(s1))
+
+# 4. Substring
+print(s1[1:4])
+
+# 5. Searching
+print(s1.index('e'))
+
+# 6. Regex match
+import re
+print(bool(re.match("he.*", s1)))
+
+# 7. Comparing
+print(s1 == "hello")
+
+# 8. startsWith, endsWith, compareTo
+print(s1.startswith("he"), s1.endswith("lo"))
+print((s1 > s2) - (s1 < s2))  # simulate compareTo
+
+# 9. Trimming
+s3 = "  space  "
+print(s3.strip())
+
+# 10. Replacing
+print(s1.replace("e", "a"))
+
+# 11. Splitting
+print("one,two,three".split(","))
+
+# 12. Int to string
+print(str(123))
+
+# 13. Uppercase and lowercase
+print(s1.upper(), s2.lower())
