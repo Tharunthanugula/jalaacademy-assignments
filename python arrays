@@ -1,0 +1,67 @@
+arr = [1, 2, 3, 4, 5]
+
+# 1. Add integers
+print("Sum:", sum(arr))
+
+# 2. Average
+print("Average:", sum(arr) / len(arr))
+
+# 3. Index of element
+print("Index of 3:", arr.index(3))
+
+# 4. Check specific value
+print("Contains 4:", 4 in arr)
+
+# 5. Remove specific element
+arr.remove(3)
+print(arr)
+
+# 6. Copy array
+copy_arr = arr[:]
+print(copy_arr)
+
+# 7. Insert at position
+arr.insert(2, 99)
+print(arr)
+
+# 8. Min & Max
+print("Min:", min(arr), "Max:", max(arr))
+
+# 9. Reverse array
+print("Reversed:", arr[::-1])
+
+# 10. Duplicate values
+arr2 = [1, 2, 2, 3, 3, 4]
+duplicates = [x for x in set(arr2) if arr2.count(x) > 1]
+print("Duplicates:", duplicates)
+
+# 11. Common values
+a = [1, 2, 3]
+b = [2, 3, 4]
+print("Common:", list(set(a) & set(b)))
+
+# 12. Remove duplicates
+print("Unique:", list(set(arr2)))
+
+# 13. Second largest
+unique = list(set(arr2))
+unique.sort()
+print("Second largest:", unique[-2])
+
+# 14. Repeat (same as above)
+print("Second largest again:", unique[-2])
+
+# 15. Even & Odd count
+evens = len([x for x in arr2 if x % 2 == 0])
+odds = len(arr2) - evens
+print("Even:", evens, "Odd:", odds)
+
+# 16. Diff of max & min
+print("Diff:", max(arr2) - min(arr2))
+
+# 17. Contains 12 and 23
+print("Contains 12 and 23:", 12 in arr2 and 23 in arr2)
+
+# 18. Remove duplicates, return new array
+new_array = list(set(arr2))
+print("New array:", new_array)
