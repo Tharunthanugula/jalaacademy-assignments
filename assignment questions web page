@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="assignmentApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Front-End Assignment Topics</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      background: #fff;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #333;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      overflow-x: auto;
+    }
+    .code-example {
+      margin-top: 10px;
+    }
+    label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body ng-controller="MainCtrl">
+  <header>
+    <h1>Front-End Assignment Topics</h1>
+    <p>HTML5, CSS, JavaScript, AngularJS</p>
+  </header>
+
+  <section>
+    <h2>HTML5 Basics</h2>
+    <p>HTML5 introduced new semantic elements like <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;header&gt;</code>, and more.</p>
+    <pre>&lt;section&gt;
+  &lt;h1&gt;Welcome&lt;/h1&gt;
+  &lt;p&gt;This is a section element&lt;/p&gt;
+&lt;/section&gt;</pre>
+  </section>
+
+  <section>
+    <h2>HTML5 Input Attributes</h2>
+    <p>HTML5 includes new input attributes like <code>placeholder</code>, <code>required</code>, and <code>pattern</code>.</p>
+    <pre>&lt;input type="email" placeholder="Enter your email" required&gt;</pre>
+  </section>
+
+  <section>
+    <h2>HTML5 Semantic Elements</h2>
+    <p>Semantic elements clearly describe their meaning in a human- and machine-readable way.</p>
+    <pre>&lt;article&gt;Article Content&lt;/article&gt;
+&lt;footer&gt;Footer Info&lt;/footer&gt;</pre>
+  </section>
+
+  <section>
+    <h2>CSS Basics</h2>
+    <p>CSS styles elements with properties like color, font-size, margins, etc.</p>
+    <pre>body {
+  background-color: lightgray;
+  font-family: Arial;
+}</pre>
+  </section>
+
+  <section>
+    <h2>CSS Page Adjustments</h2>
+    <p>Using margins, padding, and layout properties like flex or grid for adjustments.</p>
+    <pre>.container {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 800px;
+}</pre>
+  </section>
+
+  <section>
+    <h2>CSS Effects</h2>
+    <p>Includes transitions, hover effects, shadows, etc.</p>
+    <pre>button:hover {
+  background-color: #444;
+  color: white;
+  transition: 0.3s;
+}</pre>
+  </section>
+
+  <section>
+    <h2>CSS Compatibility</h2>
+    <p>Use vendor prefixes and responsive design techniques for better browser compatibility.</p>
+    <pre>::-webkit-input-placeholder {
+  color: gray;
+}</pre>
+  </section>
+
+  <section>
+    <h2>JavaScript Basics</h2>
+    <p>JavaScript is used for interactivity. Example:</p>
+    <pre>&lt;button onclick="alert('Hello!')"&gt;Click me&lt;/button&gt;</pre>
+  </section>
+
+  <section>
+    <h2>JavaScript Access and Properties</h2>
+    <p>Access elements using <code>document.getElementById</code> and manipulate properties.</p>
+    <pre>document.getElementById("demo").style.color = "blue";</pre>
+  </section>
+
+  <section>
+    <h2>JavaScript Events</h2>
+    <p>Events like <code>onclick</code>, <code>onmouseover</code>, etc.</p>
+    <pre>document.getElementById("btn").addEventListener("click", function() {
+  alert("Button clicked!");
+});</pre>
+  </section>
+
+  <section>
+    <h2>AngularJS Basics</h2>
+    <p>Two-way data binding with <code>ng-model</code>.</p>
+    <label>Name: <input type="text" ng-model="name"></label>
+    <p>Hello, {{name}}!</p>
+  </section>
+
+  <section>
+    <h2>AngularJS Filters</h2>
+    <p>Filters modify the view of data.</p>
+    <div ng-init="amount=1234.56">
+      <p>Currency: {{ amount | currency }}</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>AngularJS JSON</h2>
+    <p>Display JSON data using <code>ng-repeat</code>.</p>
+    <div ng-init='people=[{"name":"John"},{"name":"Jane"}]'>
+      <ul>
+        <li ng-repeat="person in people">{{ person.name }}</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>AngularJS Events</h2>
+    <p>Use <code>ng-click</code> to handle events.</p>
+    <button ng-click="count = count + 1">Click me</button>
+    <p>You clicked {{ count }} times.</p>
+  </section>
+
+  <section>
+    <h2>AngularJS Elements and Validations</h2>
+    <form name="userForm">
+      <label>Email:
+        <input type="email" name="email" ng-model="user.email" required>
+      </label>
+      <span ng-show="userForm.email.$touched && userForm.email.$invalid" style="color:red">Invalid email!</span>
+    </form>
+  </section>
+
+</body>
+<script>
+  angular.module('assignmentApp', []).controller('MainCtrl', function($scope) {
+    $scope.name = '';
+    $scope.count = 0;
+    $scope.user = {};
+  });
+</script>
+</html>
