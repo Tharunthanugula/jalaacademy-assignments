@@ -1,0 +1,15 @@
+ *Employee Table
+CREATE TABLE Employee (
+    EmpID INT PRIMARY KEY,
+    EmpName VARCHAR(100),
+    Department VARCHAR(50),
+    Salary INT,
+    DOJ DATE
+);
+
+-- Department Table
+CREATE TABLE Department (
+    DeptID INT PRIMARY KEY,
+    DeptName VARCHAR(50),
+    Location VARCHAR(50)
+);
